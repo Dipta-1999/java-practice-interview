@@ -91,6 +91,19 @@ public class Practice {
            sort.add(c);
         return "sort: " + sort.toString() + "\nUnsort Hash: " + set.toString() ;
     }
+
+    //check anagram
+    public static String isAnagram(String str1, String str2)
+    {
+        String s1 = str1.toLowerCase();
+        String s2 = str2.toLowerCase();
+        char[] c1 = s1.toCharArray();
+        char[] c2 = s2.toCharArray();
+        Arrays.sort(c1);
+        Arrays.sort(c2);
+        String result = Arrays.equals(c1, c2)? "Yes it's anagram" : "No it's not anagram";
+        return result;
+    }
     public static void main(String[] args) {
         String p1 = letterCount("aasbcbdyu");
         System.out.println(p1);
@@ -102,5 +115,7 @@ public class Practice {
         System.out.println(p4);
         String p5 = uniqueCharacter("aasbcbdyu");
         System.out.println(p5);
+        String p6 = isAnagram("Listen", "silent");
+        System.out.println(p6);
     }
 }
