@@ -104,6 +104,20 @@ public class Practice {
         String result = Arrays.equals(c1, c2)? "Yes it's anagram" : "No it's not anagram";
         return result;
     }
+    //check all numbers starting with 1
+    public static void checkNumStartWithOne(int[] ar)
+    {
+        
+        for(int i : ar)
+        {
+            String str = String.valueOf(i);
+            if(str.charAt(0)=='1')
+            {
+                System.out.print(i + " ");
+            }
+        }
+        
+    }
     public static void main(String[] args) {
         String p1 = letterCount("aasbcbdyu");
         System.out.println(p1);
@@ -117,5 +131,8 @@ public class Practice {
         System.out.println(p5);
         String p6 = isAnagram("Listen", "silent");
         System.out.println(p6);
+        int[] ar = {10, 120, 30, 80, 40};
+        checkNumStartWithOne(ar);
+        
     }
 }
