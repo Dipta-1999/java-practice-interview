@@ -1,5 +1,9 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
@@ -118,6 +122,42 @@ public class Practice {
         }
         
     }
+    //All unique characters str=hhaasserdd -> er
+    private static String allUniqueCharacter(String str)
+    {
+        Map<Character, Integer> map = new LinkedHashMap<>();
+        List<Character> list = new ArrayList<>();
+        for(char ch:str.toCharArray()){
+           map.put(ch,map.getOrDefault(ch,0)+1);
+        }
+        char result=' ';
+        for(char k:map.keySet()){
+            if(map.get(k)==1){
+                result=k;
+                list.add(result);
+            }
+        }
+        return list.toString();
+    }
+    //first unique characters str=hhaasserdd -> e
+    private static char firstUniqueCharacter(String str)
+    {
+        Map<Character,Integer> map = new LinkedHashMap<>();
+        for(char ch : str.toCharArray())
+        {
+            map.put(ch, map.getOrDefault(ch, 0)+1);
+        }
+        char result = ' ';
+        for(char k : map.keySet())
+        {
+            if(map.get(k)==1)
+            {
+                result = k;
+                break;
+            }
+        }
+        return result;
+    }
     public static void main(String[] args) {
         String p1 = letterCount("aasbcbdyu");
         System.out.println(p1);
@@ -131,8 +171,12 @@ public class Practice {
         System.out.println(p5);
         String p6 = isAnagram("Listen", "silent");
         System.out.println(p6);
-        int[] ar = {10, 120, 30, 80, 40};
-        checkNumStartWithOne(ar);
-        
+        int[] p7 = {10, 120, 30, 80, 40};
+        checkNumStartWithOne(p7);
+        System.out.println();
+        String p8 = "hhaasserdd";
+        System.out.println(allUniqueCharacter(p8));
+        String p9 = "hhaasserdd";
+        System.out.println(firstUniqueCharacter(p9));        
     }
 }

@@ -61,12 +61,12 @@ public class Weather {
             String cityName = extractValue(response, "\"name\":\"", "\"");
 
             String tempStr = extractValue(response, "\"temp\":", ",");
-            double temperature = Double.parseDouble(tempStr) - 273.15; // Convert from Kelvin to Celsius
-            
+            double temperature = Double.parseDouble(String.valueOf(tempStr)) - 273.15; // Convert from Kelvin to Celsius
+        
             String tempfeeel = extractValue(response, "\"feels_like\":", ",");
             double temperaturefeel = Double.parseDouble(tempfeeel) - 273.15; // Convert from Kelvin to Celsius
 
-            String humidityStr = extractValue(response, "\"humidity\":", "}");
+            String humidityStr = extractValue(response, "\"humidity\":", ",");
             int humidity = Integer.parseInt(humidityStr);
             
             String description = extractValue(response, "\"description\":\"", "\"");
