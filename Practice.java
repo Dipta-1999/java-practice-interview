@@ -158,6 +158,29 @@ public class Practice {
         }
         return result;
     }
+    //reverse string dipta -> atpid
+    private static String reverseString(String str)
+    {
+        String result = " ";
+        // for(int i = 0; i < str.length(); i++)
+        // {
+        //     char ch = str.charAt(i);
+        //     if(ch!=' ')
+        //     {
+        //         result=ch+result;
+        //     }
+        // }
+        int i = 0;
+        while (i < str.length()) {
+            char ch = str.charAt(i);
+            if(ch!=32)
+            {
+                result = ch + result;
+            }
+            i++;
+        }
+        return result;
+    }
     public static void main(String[] args) {
         String p1 = letterCount("aasbcbdyu");
         System.out.println(p1);
@@ -177,6 +200,8 @@ public class Practice {
         String p8 = "hhaasserdd";
         System.out.println(allUniqueCharacter(p8));
         String p9 = "hhaasserdd";
-        System.out.println(firstUniqueCharacter(p9));        
+        System.out.println(firstUniqueCharacter(p9));   
+        String p10 = "Rajesh";
+        System.out.println(reverseString(p10));     
     }
 }
