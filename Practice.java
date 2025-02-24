@@ -181,6 +181,44 @@ public class Practice {
         }
         return result;
     }
+    //palindromic words
+    public static boolean palindromicString(String str)
+    {
+        String w="";
+        for(int i=str.length()-1;i>=0;i--)
+        {
+            char ch = str.charAt(i);
+            if(ch!=32)
+            {
+                w+=ch;
+            }
+        }
+        if(w.equalsIgnoreCase(str))
+            return  true;
+        
+        return false;
+    }
+    //reverse the largest length word I am a boy -> I am a yob
+    public static String reversedSentence(String str)
+    {
+        String res = "";
+        String[] ar= str.split(" ");
+        String lgwrd = " ";
+        for(String i : ar)
+        {
+            if(i.length() > lgwrd.length())
+            {
+                lgwrd = i;
+                
+            }
+            
+            
+        }
+
+        String reversedLargestWord = new  StringBuilder(lgwrd).reverse().toString();
+
+        return str.replace(lgwrd, reversedLargestWord);
+    }
     public static void main(String[] args) {
         String p1 = letterCount("aasbcbdyu");
         System.out.println(p1);
@@ -202,6 +240,10 @@ public class Practice {
         String p9 = "hhaasserdd";
         System.out.println(firstUniqueCharacter(p9));   
         String p10 = "Rajesh";
-        System.out.println(reverseString(p10));     
+        System.out.println(reverseString(p10)); 
+        String p11="Madam";
+        System.out.println(palindromicString(p11)); 
+        String p12 = "hello baby john"; 
+        System.err.println(reversedSentence(p12));  
     }
 }
